@@ -16,7 +16,7 @@ while (!Usernametest.equals(Username)){//If the user puts the wrong username
 Passwordtest=JOptionPane.showInputDialog("Enter the password."); //user has a chance to type in password
 while (!Password.equals(Passwordtest)){ // If it's wrong the user will have to try again.
 	Passwordtest=JOptionPane.showInputDialog("That is inccorect. Enter the password again. You have " + i + " attempts remaining.");
-	i--;
+	if (!Passwordtest.equals(Passwordtest)){i--;}
 	if (i==0){ // if they tried too many times 
 		JOptionPane.showMessageDialog(null, "You tried too many times."); // this will output
 		System.exit(0);} // and the program will end
