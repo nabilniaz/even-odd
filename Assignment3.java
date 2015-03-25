@@ -3,21 +3,21 @@ public class Assignment3 {
 
 	public static void main(String[] args) {
 		String Username = "Nabil"; String Password = "password"; String Usernametest = ""; 
-		String Passwordtest =""; int i=0;
+		String Passwordtest =""; int i=3;
 		Usernametest=JOptionPane.showInputDialog("What is the username?");
 while (!Usernametest.equals(Username)){//If the user puts the wrong username
-	Usernametest=JOptionPane.showInputDialog("Please try again. Enter the username."); // Prompted to try again
-	i++;// counts attempts
-	if (i==3){ // If they try too many times
+	Usernametest=JOptionPane.showInputDialog("Please try again. Enter the username. You have " + i + " attempts remaining."); // Prompted to try again
+	i--;// counts attempts
+	if (i==0){ // If they try too many times
 		JOptionPane.showMessageDialog(null,"Invalid Username."); // then it will display invaild username
 		JOptionPane.showMessageDialog(null, "Contact the administrator."); // and to contact the administrator
 		System.exit(0);} // the program will end
 }
 Passwordtest=JOptionPane.showInputDialog("Enter the password."); //user has a chance to type in password
 while (!Password.equals(Passwordtest)){ // If it's wrong the user will have to try again.
-	Passwordtest=JOptionPane.showInputDialog("That is inccorect. Enter the password again.");
-	i++;
-	if (i==3){ // if they tried too many times 
+	Passwordtest=JOptionPane.showInputDialog("That is inccorect. Enter the password again. You have " + i + " attempts remaining.");
+	i--;
+	if (i==0){ // if they tried too many times 
 		JOptionPane.showMessageDialog(null, "You tried too many times."); // this will output
 		System.exit(0);} // and the program will end
 }
